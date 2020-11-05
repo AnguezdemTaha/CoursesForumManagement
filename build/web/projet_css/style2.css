@@ -1,0 +1,16 @@
+#container col {background-color:#4BE89F;}
+
+			
+			[class*="col-"] {
+  			background-color: #D1B2D1;
+  			border: 2px solid black;
+  			border-radius: 6px;
+  			line-height: 40px;
+  			text-align: center;
+			}
+
+			[class*="col-md-12 "] {background-color: #608674;}
+			[class*="col-md-10 "] {background-color: #ECEAAB;}
+
+			#content #sidebar .row {background-color:#BBFAFA;padding:10px;}
+			#content #sidebar #row .widget{background-color:#BBFAFA;}
