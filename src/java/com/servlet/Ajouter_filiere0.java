@@ -5,8 +5,8 @@
  */
 package com.servlet;
 
-import dao.Module_filiere_anneeDao;
-import dao.UtilisateurDao;
+import com.database.Module_filiere_anneeDao;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -62,7 +62,7 @@ public class Ajouter_filiere0 extends HttpServlet {
             throws ServletException, IOException {
         Module_filiere_anneeDao module = new Module_filiere_anneeDao();
         request.setAttribute("filieres", module.recupererfilieres());
-        UtilisateurDao utilisateur = new UtilisateurDao();
+        UtilisateurDaoo utilisateur = new UtilisateurDaoo();
         request.setAttribute("professeurs", utilisateur.recupererProfesseurs());
         this.getServletContext().getRequestDispatcher("/adm_ajouter_filiere.jsp").forward(request, response);
     }

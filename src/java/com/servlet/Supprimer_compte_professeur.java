@@ -5,7 +5,7 @@
  */
 package com.servlet;
 
-import dao.UtilisateurDao;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -48,7 +48,7 @@ public class Supprimer_compte_professeur extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UtilisateurDao utilisateur = new UtilisateurDao();
+        UtilisateurDaoo utilisateur = new UtilisateurDaoo();
         request.setAttribute("professeurs", utilisateur.recupererProfesseurs());
         this.getServletContext().getRequestDispatcher("/adm_supprimer_compte_professeur.jsp").forward(request, response);
     }

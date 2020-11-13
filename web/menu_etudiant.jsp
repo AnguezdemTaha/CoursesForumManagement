@@ -101,14 +101,22 @@
                             </ul>
                         
                         
-                            
+                            <a href="#" class="notification">
+                                <span>Inbox</span>
+                                <span class="badge">3</span>
+                                <span class="badge">4</span>
+                            </a>
                         
-                        
+                            <a class="services-website sittings_button" href="#">sittings</a>
                               
                         
                             <!-- Search Button -->
                             
 
+                            <div class="register-login-area">
+                                <a href="#" class="btn addcours_button">Ajouter un cours</a>
+                                <a href="Deconnexion" class="btn active">Se deconnecter</a>
+                            </div>
                             <!-- Register / Login -->
                             <div class="register-login-area">
                                 

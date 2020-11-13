@@ -5,7 +5,7 @@
  */
 package com.servlet;
 
-import dao.Module_filiere_anneeDao;
+import com.database.Module_filiere_anneeDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;

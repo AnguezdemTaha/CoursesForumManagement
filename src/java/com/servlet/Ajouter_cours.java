@@ -6,10 +6,10 @@
 package com.servlet;
 
 import com.beans.Module;
-import com.beans.Cours;
-import com.beans.Utilisateur;
+import com.beans.Course;
+import com.beans.User;
 import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
-import dao.Module_filiere_anneeDao;
+import com.database.Module_filiere_anneeDao;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -101,12 +101,12 @@ public class Ajouter_cours extends HttpServlet {
        Module module =new Module();
        module.setId(id);
        
-       Cours cours=new Cours();
+       Course cours=new Course();
        //cours.setId_cours(id);
        cours.setNom_cours(nom);
-       Utilisateur prof=new Utilisateur();
+       User prof=new User();
        HttpSession session = request.getSession();
-       prof=(Utilisateur) session.getAttribute("utilisateur7");
+       prof=(User) session.getAttribute("utilisateur7");
        InputStream inputStream = null;
        if (filePart != null) {
             // prints out some information for debugging

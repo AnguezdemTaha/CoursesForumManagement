@@ -40,13 +40,13 @@
                                 <li><a href="#">Gestion des étudiants   </a>
                                    <ul class="dropdown">
                                     <li>
-                                        <a href="Adm_etudiants_envoye">Les demandes</a>
+                                        <a id="demands" href="Adm_etudiants_envoye">Les demandes</a>
                                     </li>
                                     <li>
-                                        <a href="demande_adm.jsp">Ajouter un étudiant</a>
+                                        <a id="add_student" href="demande_adm.jsp">Ajouter un étudiant</a>
                                     </li>
                                     <li>
-                                        <a href="Supprimer_compte_etudiant">Supprimer étudiant</a>
+                                        <a id="delete_student" href="Supprimer_compte_etudiant">Supprimer étudiant</a>
                                     </li>
                                   
                                    </ul>
@@ -55,10 +55,10 @@
                                 <li><a href="#">Gestion des profs</a>
                                    <ul class="dropdown">
                                     <li>
-                                        <a href="adm_creer_compte_professeur.jsp">Ajouter un prof</a>
+                                        <a id="add_teacher" href="adm_creer_compte_professeur.jsp">Ajouter un prof</a>
                                     </li>
                                     <li>
-                                        <a href="Supprimer_compte_professeur">Supprimer un prof</a>
+                                        <a id="delete_teacher" href="Supprimer_compte_professeur">Supprimer un prof</a>
                                     </li>
                                     
                                     
@@ -71,10 +71,10 @@
                                 <li><a href="#">Gestion des Modules</a>
                                    <ul class="dropdown">
                                     <li>
-                                        <a href="Ajouter_module0">Ajouter un module</a>
+                                        <a id="add_model" href="Ajouter_module0">Ajouter un module</a>
                                     </li>
                                     <li>
-                                        <a href="Supprimer_module">Supprimer module</a>
+                                        <a id="delete_model" href="Supprimer_module">Supprimer module</a>
                                     </li>
                                   
                                     
@@ -85,10 +85,10 @@
                                  <li><a href="#">Gestion des Filières</a>
                                    <ul class="dropdown">
                                     <li>
-                                        <a href="adm_ajouter_filiere.jsp">Ajouter filiere</a>
+                                        <a id="add_branch" href="adm_ajouter_filiere.jsp">Ajouter filiere</a>
                                     </li>
                                     <li>
-                                        <a href="Supprimer_filiere">Supprimer filiere</a>
+                                        <a id="delete_branch" href="Supprimer_filiere">Supprimer filiere</a>
                                     </li>
                                   
                                     

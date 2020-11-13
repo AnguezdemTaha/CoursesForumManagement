@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 
-import com.beans.Utilisateur;
-import dao.UtilisateurDao;
+import com.beans.User;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -82,9 +82,9 @@ public class Gestion_admin extends HttpServlet {
        
        String type=request.getParameter("type");
        
-       Utilisateur utilisateur =new Utilisateur(id,nom,prenom,telephone,email,password,type);
+       User utilisateur =new User(id,nom,prenom,telephone,email,password,type);
        
-       if(UtilisateurDao.AjouterUtilisateur(utilisateur)){
+       if(UtilisateurDaoo.AjouterUtilisateur(utilisateur)){
            String message="Un neuveux etudiant a été ajouter avec succée";
            request.setAttribute("message1",message );
                 this.getServletContext().getRequestDispatcher("/demande_adm.jsp").forward(request, response);

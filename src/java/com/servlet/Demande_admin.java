@@ -6,9 +6,9 @@
 package com.servlet;
 
 
-import com.beans.Utilisateur;
+import com.beans.User;
 import com.sun.xml.rpc.processor.modeler.j2ee.xml.paramValueType;
-import dao.UtilisateurDao;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -58,9 +58,9 @@ public class Demande_admin extends HttpServlet {
        
        String type=request.getParameter("type");
        
-       Utilisateur utilisateur =new Utilisateur(nom,prenom,telephone,email,password,type);
+       User utilisateur =new User(nom,prenom,telephone,email,password,type);
        
-       if(UtilisateurDao.AjouterUtilisateur(utilisateur)){
+       if(UtilisateurDaoo.AjouterUtilisateur(utilisateur)){
            String message="Un neuveux etudiant a été ajouter avec succée";
            request.setAttribute("message1",message );
                 this.getServletContext().getRequestDispatcher("/demande_adm.jsp").forward(request, response);

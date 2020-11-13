@@ -5,8 +5,8 @@
  */
 package com.servlet;
 
-import com.beans.Questions;
-import dao.Module_filiere_anneeDao;
+import com.beans.Question;
+import com.database.Module_filiere_anneeDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -77,7 +77,7 @@ public class Questionreponse extends HttpServlet {
             throws ServletException, IOException {
         
         int id =Integer.parseInt(request.getParameter("idquestion"));
-        Questions question =new Questions();
+        Question question =new Question();
         
         question.setId(id);
         

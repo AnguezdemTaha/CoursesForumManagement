@@ -5,7 +5,7 @@
  */
 package com.servlet;
 
-import dao.UtilisateurDao;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -59,7 +59,7 @@ public class Adm_etudiants_envoye extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UtilisateurDao utilisateur = new UtilisateurDao();
+        UtilisateurDaoo utilisateur = new UtilisateurDaoo();
         request.setAttribute("etudiants", utilisateur.recupererEtudiantsdemande());
         this.getServletContext().getRequestDispatcher("/Adm_etudiant_envoye.jsp").forward(request, response);
     }

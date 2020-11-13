@@ -10,74 +10,56 @@ package com.beans;
  * @author lm
  */
 public class Module {
-    private int id;
-    private String nom ;
-    private String annee ;
-    private String filier ;
-/*
-    public Module(int id, String nom, String annee, String filier, String[] id_Profs) {
-        this.id = id;
-        this.nom = nom;
-        this.annee = annee;
-        this.filier = filier;
-        this.id_Profs = id_Profs;
-    }
-*/
-    
+    private int module_id;
+    private String module_name ;
+    private String module_year ;
+    private Branch module_branch ;
 
     public Module() {
     }
 
+    public Module(int module_id, String module_name, String module_year, Branch module_branch) {
+        this.module_id = module_id;
+        this.module_name = module_name;
+        this.module_year = module_year;
+        this.module_branch = module_branch;
+    }
+
+    public int getModule_id() {
+        return module_id;
+    }
+
+    public void setModule_id(int module_id) {
+        this.module_id = module_id;
+    }
+    
+    
     
 
-    /*public String[] getId_Profs() {
-        return id_Profs;
-    }*/
-
-    public Module(String id, String nom, String annee, String filiere) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getModule_name() {
+        return module_name;
     }
 
-    
-
-    
-
-    public int getId() {
-        return id;
+    public void setModule_name(String module_name) {
+        this.module_name = module_name;
     }
 
-    public String getNom() {
-        return nom;
+    public String getModule_year() {
+        return module_year;
     }
 
-    public String getAnnee() {
-        return annee;
+    public void setModule_year(String module_year) {
+        this.module_year = module_year;
     }
 
-    public String getFilier() {
-        return filier;
+    public Branch getModule_branch() {
+        return module_branch;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setModule_branch(Branch module_branch) {
+        this.module_branch = module_branch;
     }
 
-    public void setAnnee(String annee) {
-        this.annee = annee;
-    }
-
-    public void setFilier(String filier) {
-        this.filier = filier;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /*public void setId_Profs(String[] id_Profs) {
-        this.id_Profs = id_Profs;
-    }*/
-    
     
     
 }

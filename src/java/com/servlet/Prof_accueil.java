@@ -5,9 +5,9 @@
  */
 package com.servlet;
 
-import com.beans.Utilisateur;
-import dao.Module_filiere_anneeDao;
-import dao.UtilisateurDao;
+import com.beans.User;
+import com.database.Module_filiere_anneeDao;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

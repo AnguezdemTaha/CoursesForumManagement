@@ -5,9 +5,9 @@
  */
 package com.servlet;
 
-import com.beans.Utilisateur;
-import dao.Module_filiere_anneeDao;
-import dao.UtilisateurDao;
+import com.beans.User;
+import com.database.Module_filiere_anneeDao;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
@@ -92,13 +92,13 @@ public class Confirmer_demande extends HttpServlet {
         String[] names = request.getParameterValues("choix");
         List id_demandes = Arrays.asList(names);
         
-        UtilisateurDao utilisateurdao= new UtilisateurDao();
+        UtilisateurDaoo utilisateurdao= new UtilisateurDaoo();
        
         if(utilisateurdao.Confirmerdemande(id_demandes)){
            String message="Vous aves confirmer des demandes avec succée";
            //request.setAttribute("module",list );
            request.setAttribute("message1",message );
-              UtilisateurDao utilisateur = new UtilisateurDao();
+              UtilisateurDaoo utilisateur = new UtilisateurDaoo();
             request.setAttribute("etudiants", utilisateur.recupererEtudiantsdemande());
             this.getServletContext().getRequestDispatcher("/Adm_etudiant_envoye.jsp").forward(request, response);
                 

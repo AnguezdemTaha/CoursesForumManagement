@@ -5,7 +5,7 @@
                 <nav class="classy-navbar justify-content-between" id="cleverNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="index.html">Gestion<span>Cours</span></a>
+                    <a class="nav-brand" href="index.html">Cours<span>Management</span></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -30,13 +30,18 @@
                                 
                             </ul>
 
-                            <!-- Search Button -->
-                           
-
+                            <!-- Search Button 
+                            <div class="search-area">
+                                <form action="#" method="post">
+                                    <input type="search" name="search" id="search" placeholder="Search">
+                                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                </form>
+                            </div>
+                            -->
                             <!-- Register / Login -->
                             <div class="register-login-area">
-                                <a href="demande.jsp" class="btn">S'inscrire</a>
-                                <a href="login.jsp" class="btn active">Se connecter</a>
+                                <a href="#" class="btn">S'inscrire</a>
+                                <a id="register-signin" href="#" class="btn active">Se connecter</a>
                             </div>
 
                         </div>

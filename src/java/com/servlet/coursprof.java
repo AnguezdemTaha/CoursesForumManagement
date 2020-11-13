@@ -7,8 +7,8 @@ package com.servlet;
 
 import com.beans.Filiere;
 import com.beans.Module;
-import com.beans.Utilisateur;
-import dao.Module_filiere_anneeDao;
+import com.beans.User;
+import com.database.Module_filiere_anneeDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -95,13 +95,13 @@ public class coursprof extends HttpServlet {
          
       
          //String nom="PFA";
-        Utilisateur utilisateur =new Utilisateur();
+        User utilisateur =new User();
         Module module=new Module();
         
         HttpSession session = request.getSession();
         session.setAttribute("nom", nom_m);
         
-        utilisateur =(Utilisateur)session.getAttribute("utilisateur7");
+        utilisateur =(User)session.getAttribute("utilisateur7");
         
         module.setNom(nom_m);
         //utilisateur.setId(2);

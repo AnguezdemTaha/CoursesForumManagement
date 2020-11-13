@@ -5,11 +5,11 @@
  */
 package com.servlet;
 
-import com.beans.Questions;
-import com.beans.Utilisateur;
-import com.beans.Cours;
-import com.beans.Reponses;
-import dao.Module_filiere_anneeDao;
+import com.beans.Question;
+import com.beans.User;
+import com.beans.Course;
+import com.beans.Answer;
+import com.database.Module_filiere_anneeDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -92,16 +92,16 @@ public class Ajouter_question extends HttpServlet {
         HttpSession session = request.getSession(true);
         //Utilisateur utilisateur = (Utilisateur) session.getAttribute("utilisateur7");
         
-        Utilisateur u =new Utilisateur();
+        User u =new User();
         u.setId(1);
         
         //Cours c=new Cours();
         //c.setId_cours(1);
         
-        Cours cours = (Cours) session.getAttribute("cours7");
+        Course cours = (Course) session.getAttribute("cours7");
         
 
-        Questions question=new Questions();
+        Question question=new Question();
         question.setContenu(contenu);
         if(Module_filiere_anneeDao.Ajouterquestion(cours, u, question)){
            String message="Un neuveux question été ajouter avec succée";
@@ -112,20 +112,20 @@ public class Ajouter_question extends HttpServlet {
            //HttpSession session = request.getSession(true);
            //Cours cours =(Cours) session.getAttribute("cours7");
         session.setAttribute("cours7", cours);
-        Map<Questions, List<Reponses>> map4 = new HashMap<>();
+        Map<Question, List<Answer>> map4 = new HashMap<>();
         //map4=(Map<Questions, List<Reponses>>) session.getAttribute("maps4");
         
         
         Module_filiere_anneeDao cours1 = new Module_filiere_anneeDao();
-        List<Questions> questioncourss=new ArrayList<Questions>();
+        List<Question> questioncourss=new ArrayList<Question>();
         questioncourss=cours1.recupererCoursmodulequestion(cours);
         
         request.setAttribute("questioncourss", cours1.recupererCoursmodulequestion(cours));
         
         
          
-        for(Questions q :questioncourss){                   
-            List<Reponses> repons= cours1.recupererreponsequestion(q);
+        for(Question q :questioncourss){                   
+            List<Answer> repons= cours1.recupererreponsequestion(q);
             map4.put(q, repons);
         }
         session.setAttribute("maps4", map4);

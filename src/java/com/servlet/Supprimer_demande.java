@@ -5,8 +5,8 @@
  */
 package com.servlet;
 
-import dao.Module_filiere_anneeDao;
-import dao.UtilisateurDao;
+import com.database.Module_filiere_anneeDao;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
@@ -79,14 +79,14 @@ public class Supprimer_demande extends HttpServlet {
         String[] names = request.getParameterValues("choix");
         List id_demandes = Arrays.asList(names);
         
-         UtilisateurDao utilisateurdao= new UtilisateurDao();
+         UtilisateurDaoo utilisateurdao= new UtilisateurDaoo();
        
        if(request.getParameter("supprimer") != null){
         if(utilisateurdao.Supprimerdemande(id_demandes)){
            String message="Vous aves supprimer des demandes avec succée";
            //request.setAttribute("module",list );
            request.setAttribute("message1",message );
-              UtilisateurDao utilisateur = new UtilisateurDao();
+              UtilisateurDaoo utilisateur = new UtilisateurDaoo();
             request.setAttribute("etudiants", utilisateur.recupererEtudiantsdemande());
             this.getServletContext().getRequestDispatcher("/Adm_etudiant_envoye.jsp").forward(request, response);
                 
@@ -100,7 +100,7 @@ public class Supprimer_demande extends HttpServlet {
            String message="Vous aves confirmer des demandes avec succée";
            //request.setAttribute("module",list );
            request.setAttribute("message1",message );
-              UtilisateurDao utilisateur = new UtilisateurDao();
+              UtilisateurDaoo utilisateur = new UtilisateurDaoo();
             request.setAttribute("etudiants", utilisateur.recupererEtudiantsdemande());
             this.getServletContext().getRequestDispatcher("/Adm_etudiant_envoye.jsp").forward(request, response);
                 

@@ -5,10 +5,10 @@
  */
 package com.servlet;
 
-import com.beans.Questions;
-import com.beans.Reponses;
-import com.beans.Utilisateur;
-import dao.Module_filiere_anneeDao;
+import com.beans.Question;
+import com.beans.Answer;
+import com.beans.User;
+import com.database.Module_filiere_anneeDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -92,8 +92,8 @@ public class Ajouter_reponse extends HttpServlet {
         HttpSession session = request.getSession(true);
         //Utilisateur utilisateur = (Utilisateur) session.getAttribute("utilisateur7");
         
-        Utilisateur u =new Utilisateur();
-        u=(Utilisateur) session.getAttribute("utilisateur7");
+        User u =new User();
+        u=(User) session.getAttribute("utilisateur7");
         
         //u.setId(1);
         
@@ -101,13 +101,13 @@ public class Ajouter_reponse extends HttpServlet {
         //Cours c=new Cours();
         //c.setId_cours(1);
         
-       Questions question=new Questions();
+       Question question=new Question();
        question.setId(id);
 
-        Reponses reponse=new Reponses();
+        Answer reponse=new Answer();
         reponse.setContenu(contenu);
         
-        com.beans.Cours cours = (com.beans.Cours) session.getAttribute("cours7");
+        com.beans.Course cours = (com.beans.Course) session.getAttribute("cours7");
         
         if(Module_filiere_anneeDao.Ajouterreponse(question, u, reponse)){
            String message="Un neuveux question été ajouter avec succée en attend l'acceptation de prof";
@@ -121,20 +121,20 @@ public class Ajouter_reponse extends HttpServlet {
         
          Module_filiere_anneeDao cours1 = new Module_filiere_anneeDao();
         //request.setAttribute("reponsesquestion", cours1.recupererreponsequestion(question));
-         Map<Questions, List<Reponses>> map4 = new HashMap<>();
+         Map<Question, List<Answer>> map4 = new HashMap<>();
         //map4=(Map<Questions, List<Reponses>>) session.getAttribute("maps4");
         
         
         
-        List<Questions> questioncourss=new ArrayList<Questions>();
+        List<Question> questioncourss=new ArrayList<Question>();
         questioncourss=cours1.recupererCoursmodulequestion(cours);
         
         request.setAttribute("questioncourss", cours1.recupererCoursmodulequestion(cours));
         
         
          
-        for(Questions q :questioncourss){                   
-            List<Reponses> repons= cours1.recupererreponsequestion(q);
+        for(Question q :questioncourss){                   
+            List<Answer> repons= cours1.recupererreponsequestion(q);
             map4.put(q, repons);
         }
         session.setAttribute("maps4", map4);

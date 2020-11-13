@@ -5,9 +5,9 @@
  */
 package com.servlet;
 
-import com.beans.Utilisateur;
-import dao.Module_filiere_anneeDao;
-import dao.UtilisateurDao;
+import com.beans.User;
+import com.database.Module_filiere_anneeDao;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
@@ -89,7 +89,7 @@ public class Prof_question_reponse extends HttpServlet {
            //request.setAttribute("module",list );
            request.setAttribute("message1",message );
            
-         Utilisateur u =(Utilisateur) session.getAttribute("utilisateur7");
+         User u =(User) session.getAttribute("utilisateur7");
               Module_filiere_anneeDao m = new Module_filiere_anneeDao();
         
             session.setAttribute("Questionsvn", m.recupererquestionprof(u));
@@ -106,7 +106,7 @@ public class Prof_question_reponse extends HttpServlet {
            //request.setAttribute("module",list );
            request.setAttribute("message1",message );
            
-         Utilisateur u =(Utilisateur) session.getAttribute("utilisateur7");
+         User u =(User) session.getAttribute("utilisateur7");
              Module_filiere_anneeDao m = new Module_filiere_anneeDao();       
             session.setAttribute("Questionsvn", m.recupererquestionprof(u));
             this.getServletContext().getRequestDispatcher("/prof_question_reponse.jsp").forward(request, response);

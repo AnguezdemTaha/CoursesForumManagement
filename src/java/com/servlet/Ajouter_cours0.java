@@ -5,8 +5,8 @@
  */
 package com.servlet;
 
-import com.beans.Utilisateur;
-import dao.Module_filiere_anneeDao;
+import com.beans.User;
+import com.database.Module_filiere_anneeDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -63,7 +63,7 @@ public class Ajouter_cours0 extends HttpServlet {
             throws ServletException, IOException {
         Module_filiere_anneeDao module_filiere = new Module_filiere_anneeDao();
         HttpSession session = request.getSession();
-        Utilisateur u=(Utilisateur) session.getAttribute("utilisateur7");
+        User u=(User) session.getAttribute("utilisateur7");
         request.setAttribute("modulesp", module_filiere.recupererModulesprof(u));
         session.setAttribute("modulesp", module_filiere.recupererModulesprof(u));
         this.getServletContext().getRequestDispatcher("/prof_ajouter_cours.jsp").forward(request, response);

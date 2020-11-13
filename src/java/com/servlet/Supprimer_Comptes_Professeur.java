@@ -5,8 +5,8 @@
  */
 package com.servlet;
 
-import dao.Module_filiere_anneeDao;
-import dao.UtilisateurDao;
+import com.database.Module_filiere_anneeDao;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
@@ -79,7 +79,7 @@ public class Supprimer_Comptes_Professeur extends HttpServlet {
          String[] names = request.getParameterValues("choix");
         List id_professeurs = Arrays.asList(names);
         
-        UtilisateurDao utilisateur = new UtilisateurDao();
+        UtilisateurDaoo utilisateur = new UtilisateurDaoo();
         request.setAttribute("etudiants", utilisateur.recupererEtudiants());
        
         if(utilisateur.Supprimerprofs(id_professeurs)){

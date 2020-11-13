@@ -5,7 +5,7 @@
  */
 package com.servlet;
 
-import dao.UtilisateurDao;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
@@ -78,7 +78,7 @@ public class Suuprimer_Demandes_etudiant extends HttpServlet {
         String[] names = request.getParameterValues("choix");
         List id_demandes = Arrays.asList(names);
         
-        UtilisateurDao utilisateur = new UtilisateurDao();
+        UtilisateurDaoo utilisateur = new UtilisateurDaoo();
         request.setAttribute("etudiants", utilisateur.recupererEtudiants());
        
         if(utilisateur.Supprimerdemande(id_demandes)){

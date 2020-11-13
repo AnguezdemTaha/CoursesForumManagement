@@ -5,8 +5,8 @@
  */
 package com.servlet;
 
-import dao.Module_filiere_anneeDao;
-import dao.UtilisateurDao;
+import com.database.Module_filiere_anneeDao;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -60,7 +60,7 @@ public class Ajouter_prof0 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UtilisateurDao etudiantdao = new UtilisateurDao();
+        UtilisateurDaoo etudiantdao = new UtilisateurDaoo();
         Module_filiere_anneeDao module_filiere = new Module_filiere_anneeDao();
         request.setAttribute("filieres", module_filiere.recupererfilieres());
                     

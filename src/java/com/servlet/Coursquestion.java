@@ -5,12 +5,12 @@
  */
 package com.servlet;
 
-import com.beans.Cours;
+import com.beans.Course;
 import com.beans.Filiere;
 import com.beans.Module;
-import com.beans.Questions;
-import com.beans.Reponses;
-import dao.Module_filiere_anneeDao;
+import com.beans.Question;
+import com.beans.Answer;
+import com.database.Module_filiere_anneeDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -85,27 +85,27 @@ public class Coursquestion extends HttpServlet {
             throws ServletException, IOException {
         int id=Integer.parseInt(request.getParameter("idcours"));
         String nom=request.getParameter("nomcours");
-        Cours cours=new Cours();
+        Course cours=new Course();
         cours.setId_cours(id);
         cours.setNom_cours(nom);
         
         if(request.getParameter("qs") != null){
-        Map<Questions, List<Reponses>> map4 = new HashMap<>();
+        Map<Question, List<Answer>> map4 = new HashMap<>();
         
         
         HttpSession session = request.getSession();
         session.setAttribute("cours7", cours);
         
         Module_filiere_anneeDao cours1 = new Module_filiere_anneeDao();
-        List<Questions> questioncourss=new ArrayList<Questions>();
+        List<Question> questioncourss=new ArrayList<Question>();
         questioncourss=cours1.recupererCoursmodulequestion(cours);
         
         request.setAttribute("questioncourss", cours1.recupererCoursmodulequestion(cours));
         
         
          
-        for(Questions q :questioncourss){                   
-            List<Reponses> repons= cours1.recupererreponsequestion(q);
+        for(Question q :questioncourss){                   
+            List<Answer> repons= cours1.recupererreponsequestion(q);
             map4.put(q, repons);
         }
         session.setAttribute("maps4", map4);

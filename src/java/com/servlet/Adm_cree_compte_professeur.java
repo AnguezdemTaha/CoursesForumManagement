@@ -5,8 +5,8 @@
  */
 package com.servlet;
 
-import com.beans.Utilisateur;
-import dao.UtilisateurDao;
+import com.beans.User;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -82,9 +82,9 @@ public class Adm_cree_compte_professeur extends HttpServlet {
        
        String type=request.getParameter("type");
        
-       Utilisateur utilisateur =new Utilisateur(nom,prenom,telephone,email,password,type);
+       User utilisateur =new User(nom,prenom,telephone,email,password,type);
        
-       if(UtilisateurDao.AjouterUtilisateurprof(utilisateur)){
+       if(UtilisateurDaoo.AjouterUtilisateurprof(utilisateur)){
            String message="Un neuveux professeur a été ajouter avec succée";
            request.setAttribute("message1",message );
                 this.getServletContext().getRequestDispatcher("/adm_creer_compte_professeur.jsp").forward(request, response);

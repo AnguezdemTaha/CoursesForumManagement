@@ -47,7 +47,7 @@
                                 <span><i class="fa fa-circle" aria-hidden="true"></i></span>
                                 <a href="#"><c:out value="${ nom }" /></a>
                             </div>
-                            <p><c:out value="${ cours.contenu_cours }" /></p>
+                            <p><c:out value="${ cours.contenu_cours }" /> </p>
                         </div>
                         <!-- Seat Rating Fee -->
                         <div class="seat-rating-fee d-flex justify-content-between">

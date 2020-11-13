@@ -6,9 +6,9 @@
 package com.servlet;
 
 import com.beans.Module;
-import com.beans.Utilisateur;
-import dao.Module_filiere_anneeDao;
-import dao.UtilisateurDao;
+import com.beans.User;
+import com.database.Module_filiere_anneeDao;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
@@ -103,7 +103,7 @@ public class Adm_ajouter_module extends HttpServlet {
        
        Module_filiere_anneeDao module2 = new Module_filiere_anneeDao();
        request.setAttribute("filieres", module2.recupererfilieres());
-       UtilisateurDao utilisateur = new UtilisateurDao();
+       UtilisateurDaoo utilisateur = new UtilisateurDaoo();
        request.setAttribute("professeurs", utilisateur.recupererProfesseurs());
                 
        if(module2.AjouterModule(module, list)){

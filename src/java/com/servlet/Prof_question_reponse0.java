@@ -5,9 +5,9 @@
  */
 package com.servlet;
 
-import com.beans.Utilisateur;
-import dao.Module_filiere_anneeDao;
-import dao.UtilisateurDao;
+import com.beans.User;
+import com.database.Module_filiere_anneeDao;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -63,8 +63,8 @@ public class Prof_question_reponse0 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-         Utilisateur u =(Utilisateur) session.getAttribute("utilisateur7");
-        UtilisateurDao utilisateur = new UtilisateurDao();
+         User u =(User) session.getAttribute("utilisateur7");
+        UtilisateurDaoo utilisateur = new UtilisateurDaoo();
         Module_filiere_anneeDao m = new Module_filiere_anneeDao();
         //request.setAttribute("Questionsvn", m.recupererquestionprof(u));
         session.setAttribute("Questionsvn", m.recupererquestionprof(u));

@@ -7,9 +7,9 @@ package com.servlet;
 
 import com.beans.Filiere;
 import com.beans.Module;
-import com.beans.Utilisateur;
-import dao.Module_filiere_anneeDao;
-import dao.UtilisateurDao;
+import com.beans.User;
+import com.database.Module_filiere_anneeDao;
+import com.database.UtilisateurDaoo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -77,8 +77,8 @@ public class Login extends HttpServlet {
             String password =request.getParameter("pwd");
             String type=request.getParameter("type");
             
-            UtilisateurDao utilisateurdao= new UtilisateurDao();
-            Utilisateur utilisateur =new Utilisateur(nom,prenom,telephone,email,password,type);
+            UtilisateurDaoo utilisateurdao= new UtilisateurDaoo();
+            User utilisateur =new User(nom,prenom,telephone,email,password,type);
             //test pour les session:
              HttpSession session = request.getSession();
 

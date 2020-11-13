@@ -7,7 +7,7 @@ package com.servlet;
 
 import com.beans.Filiere;
 import com.beans.Module;
-import dao.Module_filiere_anneeDao;
+import com.database.Module_filiere_anneeDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

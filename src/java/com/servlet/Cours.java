@@ -6,8 +6,8 @@
 package com.servlet;
 
 import com.beans.Module;
-import dao.Module_filiere_anneeDao;
-import dao.UtilisateurDao;
+import com.database.Module_filiere_anneeDao;
+import com.database.UtilisateurDaoo;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -99,7 +99,7 @@ public class Cours extends HttpServlet {
         //request.setAttribute("modules", module_filiere.recupererModulesannee(annee));
                     
         
-        List<com.beans.Cours> courss= cours.recupererCoursmodule(module, annee);
+        List<com.beans.Course> courss= cours.recupererCoursmodule(module, annee);
         request.setAttribute("courss", cours.recupererCoursmodule(module, annee));
         
         
