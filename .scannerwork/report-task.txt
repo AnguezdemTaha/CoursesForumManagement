@@ -1,0 +1,6 @@
+projectKey=projet:S3
+serverUrl=http://localhost:9000
+serverVersion=8.6.0.39681
+dashboardUrl=http://localhost:9000/dashboard?id=projet%3AS3
+ceTaskId=AXbc7eSTqdJ35eEj97nj
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXbc7eSTqdJ35eEj97nj

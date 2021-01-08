@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.servlet;
+package java.com.servlet;
 
 import dao.Module_filiere_anneeDao;
 import java.io.IOException;
