@@ -12,11 +12,11 @@ import java.sql.Blob;
  * @author lm
  */
 public class Cours {
-    int id_cours ;
-    int id_prof ;
-    int id_module ;
-    String nom_cours ;
-    int contenu_cours ;//fichier
+  int id_cours ;
+  int id_prof ;
+  int id_module ;
+  String nom_cours ;
+  int contenu_cours ;//fichier
     String date_cours ;
     Blob file_cours;
 

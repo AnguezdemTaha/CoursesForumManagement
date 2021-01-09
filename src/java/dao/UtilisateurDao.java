@@ -8,7 +8,6 @@ package dao;
 import com.beans.Etudiant;
 import com.beans.Utilisateur;
 import com.database.DBconect;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -27,6 +26,12 @@ import java.util.logging.Logger;
 public class UtilisateurDao {
     private Connection connexion;
     
+    private static final String ID_UTILISATEUR="Id_utilisateur";
+    private static final String NOM_UTILISATEUR="Nom_utilisateur";
+    private static final String PRENOM_UTILISATEUR="Prenom_utilisateur";
+    private static final String EMAIL_UTILISATEUR="Email_utilisateur";
+    private static final String TELEPHONE_UTILISATEUR="Telephone_utilisateur";
+    private static final String TYPE_UTILISATEUR="Type_utilisateur";
     //chercher base donne
     public static Utilisateur chercher(Utilisateur utilisateur) {
     
@@ -41,12 +46,12 @@ public class UtilisateurDao {
         ResultSet resultat=statement.executeQuery();
         
         if(resultat.next()){
-            int id = resultat.getInt("Id_utilisateur");
-            String nom = resultat.getString("Nom_utilisateur");
-            String prenom = resultat.getString("Prenom_utilisateur");
-            String email = resultat.getString("Email_utilisateur");
-            String telephone = resultat.getString("Telephone_utilisateur");
-            String type = resultat.getString("Type_utilisateur");
+            int id = resultat.getInt(ID_UTILISATEUR);
+            String nom = resultat.getString(NOM_UTILISATEUR);
+            String prenom = resultat.getString(PRENOM_UTILISATEUR);
+            String email = resultat.getString(EMAIL_UTILISATEUR);
+            String telephone = resultat.getString(TELEPHONE_UTILISATEUR);
+            String type = resultat.getString(TYPE_UTILISATEUR);
                
             utilisateur.setId(id);
             utilisateur.setNom(nom);
@@ -114,6 +119,7 @@ public class UtilisateurDao {
     public static boolean AjouterUtilisateurprof(Utilisateur utilisateur){
         DBconect db=new DBconect();
         Connection con=null;
+        
         try {
             con=db.connecte();
             PreparedStatement stmt=con.prepareStatement("insert into Utilisateur(Nom_utilisateur,Prenom_utilisateur,Email_utilisateur,Telephone_utilisateur,Type_utilisateur,Mot_de_passe_utilisateur) values(?,?,?,?,?,?)");
@@ -178,11 +184,11 @@ public class UtilisateurDao {
 
             // Récupération des données
             while (resultat.next()) {
-                String nom = resultat.getString("Nom_utilisateur");
-                String prenom = resultat.getString("Prenom_utilisateur");
-                String email = resultat.getString("Email_utilisateur");
-                String telephone = resultat.getString("Telephone_utilisateur");
-                int id = resultat.getInt("Id_utilisateur");
+                String nom = resultat.getString(NOM_UTILISATEUR);
+                String prenom = resultat.getString(PRENOM_UTILISATEUR);
+                String email = resultat.getString(EMAIL_UTILISATEUR);
+                String telephone = resultat.getString(TELEPHONE_UTILISATEUR);
+                int id = resultat.getInt(ID_UTILISATEUR);
                
                 
                 

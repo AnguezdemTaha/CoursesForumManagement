@@ -2,7 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
             <file>file:/C:/Users/f/Desktop/Projet_s3/src/java/com/servlet/Adm_ajouter_module.java</file>
             <file>file:/C:/Users/f/Desktop/Projet_s3/src/java/com/beans/Module_Prof.java</file>
@@ -20,8 +19,5 @@
             <file>file:/C:/Users/f/Desktop/Projet_s3/src/java/com/beans/Questions.java</file>
             <file>file:/C:/Users/f/Desktop/Projet_s3/src/java/com/beans/Reponses.java</file>
         </group>
-=======
-        <group/>
->>>>>>> d30b24e05dd4a5d7eceb43d0629b4c2ce1050a12
     </open-files>
 </project-private>
